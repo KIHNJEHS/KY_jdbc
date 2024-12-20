@@ -1,0 +1,22 @@
+package jdbcm.study01;
+
+public class App {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String driver = "org.mariadb.jdbc.Driver";
+		try {
+			System.out.println("JDBC Start!");
+			Class.forName(driver);
+		} catch (ClassNotFoundException e) {
+			System.out.println("JDBC Driver NO");
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} 
+	}
+}
+
+	
+
+
