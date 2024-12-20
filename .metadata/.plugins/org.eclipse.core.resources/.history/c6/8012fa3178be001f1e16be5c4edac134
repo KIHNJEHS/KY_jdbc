@@ -1,0 +1,36 @@
+package jdbcStudy;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class App {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String driver = "org.mariadb.jdbc.Driver";
+		try {
+			System.out.println("JDBC Start!");
+			Class.forName(driver);
+			
+			String url = "jdbc:mariadb://prj1119.tplinkdns.com:8181/edu";
+			String id = "user5";
+			String pwd = "user5";
+					
+			Connection conn = DriverManager.getConnection(url, id, pwd);
+			System.out.println("JDBC Connection OK");
+			conn.close();
+			
+		} catch (ClassNotFoundException e) {
+			System.out.println("JDBC Driver NO");
+		} catch (SQLException e) {
+			System.out.println("JDBC Connection NO");
+		} catch (Exception e) {
+			e.printStackTrace();
+		} 
+	}
+
+}
+
+	
+
+
